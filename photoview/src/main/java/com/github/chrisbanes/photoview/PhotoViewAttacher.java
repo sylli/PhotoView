@@ -41,7 +41,7 @@ public class PhotoViewAttacher implements View.OnTouchListener,
         OnGestureListener,
         View.OnLayoutChangeListener {
 
-    private static float DEFAULT_MAX_SCALE = 3.0f;
+    private static float DEFAULT_MAX_SCALE = 4.0f;
     private static float DEFAULT_MID_SCALE = 2.0f;
     private static float DEFAULT_MIN_SCALE = 1.0f;
     private static int DEFAULT_ZOOM_DURATION = 200;
@@ -188,11 +188,11 @@ public class PhotoViewAttacher implements View.OnTouchListener,
 //                    }
 
 
-                    if (scale < getMediumScale()) {
-                        setScale(getMediumScale(), x, y, true);
+                    if (scale > getMinimumScale()) {
+                        setScale(getMinimumScale(), x, y, true);
                     }
                     else {
-                        setScale(getMinimumScale(), x, y, true);
+                        setScale(getMediumScale(), x, y, true);
                     }
 
 
