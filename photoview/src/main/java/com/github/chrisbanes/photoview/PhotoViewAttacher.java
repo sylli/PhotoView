@@ -399,17 +399,17 @@ public class PhotoViewAttacher implements View.OnTouchListener,
             }
 
             // Try the Scale/Drag detector
-//            if (mScaleDragDetector != null) {
-//                boolean wasScaling = mScaleDragDetector.isScaling();
-//                boolean wasDragging = mScaleDragDetector.isDragging();
-//
-//                handled = mScaleDragDetector.onTouchEvent(ev);
-//
-//                boolean didntScale = !wasScaling && !mScaleDragDetector.isScaling();
-//                boolean didntDrag = !wasDragging && !mScaleDragDetector.isDragging();
-//
-//                mBlockParentIntercept = didntScale && didntDrag;
-//            }
+            if (mScaleDragDetector != null) {
+                boolean wasScaling = mScaleDragDetector.isScaling();
+                boolean wasDragging = mScaleDragDetector.isDragging();
+
+                handled = mScaleDragDetector.onTouchEvent(ev);
+
+                boolean didntScale = !wasScaling && !mScaleDragDetector.isScaling();
+                boolean didntDrag = !wasDragging && !mScaleDragDetector.isDragging();
+
+                mBlockParentIntercept = didntScale && didntDrag;
+            }
 
             // Check to see if the user double tapped
             if (mGestureDetector != null && mGestureDetector.onTouchEvent(ev)) {
